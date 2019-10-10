@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :validate_search_key, only: [:search]
+
   def index
    @products = Product.all
   end
@@ -17,4 +19,23 @@ class ProductsController < ApplicationController
   end
     redirect_back fallback_location: root_path
   end
+
+  def search
+    if @query_string.present?
+      search_result = Product.ransack(@search_criteria).result(:distinct => true)
+      @products = search_result
+    end
+  end
+
+  protected  # 放在最后
+
+
+  def validate_search_key
+   @query_string = params[:q].gsub(/\\|\'|\/|\?/, "") if params[:q].present?
+   @search_criteria = search_criteria(@query_string)
+ end
+
+ def search_criteria(query_string)
+   { :title_cont => query_string }
+ end
 end
