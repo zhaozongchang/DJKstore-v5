@@ -7,6 +7,9 @@
   <%= f.input :description,:label => "产品描述" %>
   <%= f.input :quantity,:label => "产品数量" %>
   <%= f.input :price ,:label => "产品价格"%>
+  <div class="group">
+   <%= f.input :image, as: :file %>
+  </div>
   <%= f.submit "Submit", data: {disable_with: "Submitting..."}%>
   <% end %>
 </div>
