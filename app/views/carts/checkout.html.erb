@@ -43,33 +43,29 @@
     <h2> 订单资讯 </h2>
 
     <div class="order-form">
+        <%= simple_form_for @order do |f| %>
+            <legend> 订购人</legend>
+            <div class="form-group col-lg-6">
+              <%= f.input :billing_name, input_html: {value: current_user.name}, label: '姓名',placeholder: '请输入订单人姓名'  %>
+            </div>
+            <div class="form-group col-lg-6">
+              <%= f.input :billing_address,input_html: {value: current_user.address}, label:'地址', placeholder: '请输入订单人地址' %>
+            </div>
 
-      <%= simple_form_for @order do |f| %>
+            <legend> 收货人</legend>
+            <div class="form-group col-lg-6">
+             <%= f.input :shipping_name,input_html: {value: current_user.name},label:'姓名', placeholder: '请输入收货人姓名'  %>
+            </div>
+            <div class="form-group col-lg-6">
+              <%= f.input :shipping_address,input_html: {value: current_user.address},label:'地址', placeholder: '请输入收货人地址' %>
+            </div>
 
-
-
-          <legend> 订购人</legend>
-          <div class="form-group col-lg-6">
-            <%= f.input :billing_name  %>
+          <div class="checkout">
+            <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
+                         data: { disable_with: "Submitting..." } %>
           </div>
-          <div class="form-group col-lg-6">
-            <%= f.input :billing_address  %>
-          </div>
+        <% end %>
 
-          <legend> 收货人</legend>
-          <div class="form-group col-lg-6">
-           <%= f.input :shipping_name  %>
-          </div>
-          <div class="form-group col-lg-6">
-            <%= f.input :shipping_address  %>
-          </div>
-
-        <div class="checkout">
-          <%= f.submit "生成订单", class: "btn btn-lg btn-danger pull-right",
-                       data: { disable_with: "Submitting..." } %>
-        </div>
-      <% end %>
-
-    </div>
+      </div>
   </div>
 </div>
