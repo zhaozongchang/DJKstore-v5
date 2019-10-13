@@ -27,6 +27,38 @@ class ProductsController < ApplicationController
     end
   end
 
+   def fresh
+    @products = Product.where(:category_id => 1)
+   end
+
+   def food
+     @products = Product.where(:category_id => 2)
+   end
+
+   def men
+     @products = Product.where(:category_id => 3)
+   end
+
+   def women
+     @products = Product.where(:category_id => 4)
+   end
+
+   def beautiful
+     @products = Product.where(:category_id => 5)
+   end
+
+   def books
+     @products = Product.where(:category_id => 6)
+   end
+
+   def computer
+     @products = Product.where(:category_id => 7)
+   end
+
+   def furniture
+     @products = Product.where(:category_id => 8)
+   end
+
   def favorite
     @product = Product.find(params[:id])
     current_user.favorite_products << @product
