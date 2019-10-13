@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module DJKstoreV5
   class Application < Rails::Application
+    config.time_zone = "Beijing"
+    Time::DATE_FORMATS.merge!(:default => '%Y/%m/%d %I:%M %p', :ymd => '%Y/%m/%d')
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
