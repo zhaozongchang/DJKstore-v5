@@ -1,1 +1,369 @@
-<h1> Hello World! </h1>
+<div class="welcome-box">
+  <!--===== 广告轮播 =====-->
+  <section class="product-category">
+    <div class="nav-list">
+      <p><%= link_to("食品") %></p>
+      <p><%= link_to("生鲜") %></p>
+      <p><%= link_to("男装") %></p>
+      <p><%= link_to("女装") %></p>
+      <p><%= link_to("美妆") %></p>
+      <p><%= link_to("电脑") %></p>
+      <p><%= link_to("图书") %></p>
+      <p><%= link_to("家居") %></p>
+    </div>
+  </section>
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 轮播按钮 =====-->
+          <ol class="carousel-indicators">
+            <li data-target="#intro" data-slide-to="0" class="active"></li>
+            <li data-target="#intro" data-slide-to="1"></li>
+            <li data-target="#intro" data-slide-to="2"></li>
+          </ol>
+
+          <!--===== 轮播内容 =====-->
+          <div class="carousel-inner lunfan-content" role="listbox">
+            <div class="item lunfan1">
+              <%= link_to product_path(52), target: "_blank" do %>
+                <div class="lunfan">
+                  <img src="http://bfs.biyao.com/group1/M00/9A/3C/rBACW12PH1eAaZ_WAAGdurJfXhs412.jpg" alt="" class="img-xys">
+                </div>
+                <div class="carousel-caption">
+                  <h4>玫瑰蓝莓雪花酥</h4>
+                  <br><span>云南低温发酵玫瑰花、进口安佳奶油、大兴安岭野生蓝莓干、酸甜可口</span>
+                </div>
+              <% end %>
+            </div>
+            <div class="item lunfan1">
+              <%= link_to '#', target: "_blank" do %> <!-- 图片连结，点击另开视窗 -->
+                <div class="lunfan">
+                  <%= image_tag("http://bfs.biyao.com/group1/M00/18/99/rBACVFmT_OKAfUQCAAG6EbAiq2U157.jpg") %>
+                </div>
+                <div class="carousel-caption">
+                  <h4>精致小提花长袖衬衫</h4> <!-- 标题 -->
+                  <br><span>舒适亲肤，100支高纱支织造，手感更细腻柔滑，成衣免烫处理工艺平整不易皱</span> <!-- 内文 -->
+                </div>
+              <% end %>
+            </div>
+            <div class="item active lunfan1">
+              <%= link_to product_path(52), target: "_blank" do %>
+                <div class="lunfan">
+                  <img src="http://bfs.biyao.com/group1/M00/7B/2A/rBACW112GbKAItCkAAI5K03cOIY893.jpg" alt="" class="img-xys">
+                </div>
+                <div class="carousel-caption">
+                  <h4>天然乳胶枕</h4>
+                  <br><span>泰国进口天然乳胶原料 乳胶含量高达90% 透气缓解颈椎压力</span>
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+          <!--===== 换页按钮 =====-->
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <!-- 左侧按钮图示 -->
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <!-- 右侧按钮图示 -->
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="clear: both;"></div>
+
+  <section class="service-box">
+    <div class="platfor">
+      <dl>
+        <dt>
+          <img src="http://static4.biyao.com/pc/www/img/new_master/ptzc_price.png?v=biyao_6786c61" alt="">
+        </dt>
+        <dd>大牌品质</dd>
+      </dl>
+      <dl>
+        <dt>
+          <img src="http://static4.biyao.com/pc/www/img/new_master/ptzc_price.png?v=biyao_6786c61" alt="">
+        </dt>
+        <dd>工厂价格</dd>
+      </dl>
+      <dl>
+        <dt>
+          <img src="http://static.biyao.com/pc/www/img/new_master/ptzc_payment.png?v=biyao_75208ed" alt="">
+        </dt>
+        <dd>分期支付</dd>
+      </dl>
+      <dl>
+        <dt>
+          <img src="http://static1.biyao.com/pc/www/img/new_master/ptzc_sf.png?v=biyao_4abee91" alt="">
+        </dt>
+        <dd>顺丰包邮</dd>
+      </dl>
+      <dl>
+        <dt>
+          <img src="http://static2.biyao.com/pc/www/img/new_master/ptzc_refund.png?v=biyao_54de047" alt="">
+        </dt>
+        <dd>无忧退款</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!--===== 品牌故事 =====-->
+  <section class="story-box">
+    <div class="toubu-title">
+      <h2 class="">品牌故事</h2> <!-- 区块标题 -->
+    </div>
+    <div class="pinpai">
+      <div class="head-image">
+        <%= image_tag("https://upload-images.jianshu.io/upload_images/12661863-31cb7e52913214e8.png?imageMogr2/auto-orient/strip|imageView2/2/w/526/format/webp") %> <!-- 创办人头像 1 -->
+      </div>
+      <div class="head-info">
+        <p>本购物网站是我独立开发，使用Ruby on Rails写后端，用CSS、HTML、JS写前端，并部署上线的。<br>目的是让用户可以快速找到自己想要的商品，放入购物车并生成订单进行付款。</p> <!-- 创办人介绍 -->
+      </div>
+      <div class="head-info2">
+        <p>一个对技术有好奇心，且善于学习，乐于分享的终身学习者。<br>我希望在不断学习成长的道路上能认识更多热爱编程热爱学习的朋友，共同建造有趣的人生！ </p> <!-- 创办人介绍 -->
+      </div>
+      <div class="head-image2">
+        <%= image_tag("https://images.pexels.com/photos/1124065/pexels-photo-1124065.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") %> <!-- 创办人头像 1 -->
+      </div>
+    </div>
+
+  </section>
+  <!--===== 服务优势 =====-->
+
+
+  <!--===== 推荐商品 =====-->
+  <section class="show-box">
+    <div class="toubu-title">
+      <h2>推荐商品</h2> <!-- 副标题 -->
+    </div>
+    <hr>
+    <div class="product-list">
+      <div class="row">
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(52), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/7B/2A/rBACW112GbKAItCkAAI5K03cOIY893.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥169</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">天然乳胶枕</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(50), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/22/A5/rBACYVoL9A-AQfG8AADOXBWthHQ451.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥128</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">冻干抗皱精华套盒</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(45), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/18/99/rBACVFmT_OKAfUQCAAG6EbAiq2U157.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥259</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">精致小提花长袖衬衫</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(53), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/6C/03/rBACYV1mG7uAZzezAAGjfMm7aXE492.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥199</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">小型便携式智能电热水壶</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(43), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/57/87/rBACVF1Q_LqAG5h6AAI-wRAwt-c866.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥399</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">简约天丝家居服分体式套装</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(54), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/9A/3C/rBACW12PH1eAaZ_WAAGdurJfXhs412.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥58</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">玫瑰蓝莓雪花酥</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(48), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/90/C2/rBACVF2JcS6ARG9TAAC_6L1L9V0905.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥25</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">好评999+ 烟台苹果</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(55), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/2E/D3/rBACW1qWjb2AKygSAADnUThCxoM716.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥89</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">玻尿酸淡纹变色润唇膏</p> <!-- 商品名称 -->
+              </div>
+            </div>
+            <% end %>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(49), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/64/FA/rBACYVvOw0WAIA-0AAAzGE9WEYo189.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥88</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">皙钻亮采美颜精华</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-8 col-sm-6">
+            <div class="thumbnail">
+              <%= link_to product_path(41), target: "_blank" do %>
+               <%= image_tag("http://bfs.biyao.com/group1/M00/98/4B/rBACVF2PHA2AZHXXABNBfsiUrUE437_800x800.jpg", class:"img-rounded")%><!-- 商品图片 -->
+              <div class="caption">
+                <div class="item-price">
+                  <span>￥29</span>
+                  <span>爆品</span>
+                  <span>一起拼</span>
+                </div> <!-- 商品价格 -->
+                <p class="item-title">红枣膳食纤维蜂蜜蛋糕</p> <!-- 商品名称 -->
+              </div>
+              <% end %>
+            </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+
+  </section>
+
+  <!--===== 用户反馈 =====-->
+  <section class="feedback-box">
+    <div class="toubu-title">
+      <h2>客户反馈</h2> <!-- 副标题 -->
+    </div>
+    <div id="feedback" class="carousel slide" data-ride="carousel">
+      <!--===== 轮播按钮 =====-->
+      <ol class="carousel-indicators">
+        <li data-target="#intro" data-slide-to="0" class="active"></li>
+        <li data-target="#intro" data-slide-to="1"></li>
+        <li data-target="#intro" data-slide-to="2"></li>
+      </ol>
+
+      <!--===== 轮播内容 =====-->
+      <div class="carousel-inner lunfan-tu" role="listbox">
+        <div class="item active beijing">
+          <div class="feedback-image">
+            <%= image_tag("https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500", class: "img-circle") %> <!-- 图片 -->
+          </div>
+          <div class="feedback-info">
+            <p>第九块商城是我用过最好的网站、下单方便、送货快速，还能订制特殊规格的商品，强力推荐。</p>
+            <strong>Eddie - 上班族</strong> <!-- 介绍 -->
+          </div>
+        </div>
+        <div class="item beijing">
+          <div class="feedback-image">
+            <%= image_tag("https://upload-images.jianshu.io/upload_images/12661863-f678a2013b1cd332.png?imageMogr2/auto-orient/strip|imageView2/2/w/512/format/webp", class: "img-circle") %> <!-- 图片 -->
+          </div>
+          <div class="feedback-info">
+            <p>第九块商城是我用过最好的网站、下单方便、送货快速，还能订制特殊规格的商品，强力推荐。</p>
+            <strong>Eddie - 上班族</strong> <!-- 介绍 -->
+          </div>
+        </div>
+        <div class="item beijing">
+          <div class="feedback-image">
+            <%= image_tag("https://upload.jianshu.io/users/upload_avatars/12661863/3facf377-d251-46fc-8292-56396141b014.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/90/h/90/format/webp", class: "img-circle") %> <!-- 图片 -->
+          </div>
+          <div class="feedback-info">
+            <p>第九块商城是我用过最好的网站、下单方便、送货快速，还能订制特殊规格的商品，强力推荐。</p>
+            <strong>Zhaochang - 上班族</strong> <!-- 介绍 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 合作品牌 =====-->
+  <section class="brand-box">
+    <div class="toubu-title">
+      <h2>合作品牌</h2> <!-- 副标题 -->
+    </div>
+    <div class="brand-image">
+      <%= image_tag("http://img1.imgtn.bdimg.com/it/u=2962163696,3140508633&fm=26&gp=0.jpg") %> <!-- 品牌图片 -->
+      <%= image_tag("http://img3.imgtn.bdimg.com/it/u=224222901,2873520786&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img3.imgtn.bdimg.com/it/u=2306283679,339933170&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img3.imgtn.bdimg.com/it/u=2463475090,1651595855&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img0.imgtn.bdimg.com/it/u=3914882640,1378637860&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img5.imgtn.bdimg.com/it/u=3804370886,156818895&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img4.imgtn.bdimg.com/it/u=2599874141,3772998681&fm=26&gp=0.jpg") %>
+      <%= image_tag("http://img1.imgtn.bdimg.com/it/u=2491839866,3541114149&fm=26&gp=0.jpg") %>
+    </div>
+  </section>
+
+  <!--===== 立即购买 =====-->
+  <section class="text-center goumai">
+    <%= link_to('立即购买', products_path, class:'btn btn-push' ) %>
+  </section>
+</div>

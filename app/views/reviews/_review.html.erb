@@ -1,0 +1,13 @@
+<div class="comment-show">
+  <p ><%= review.body %></p>
+  <div class="comment-content">
+      <p class="comment-content-1">评论者：<%= review.user.email %></p>
+      <p class="comment-content-1">时间：<%= review.created_at.to_s(:ymd) %></p>
+      <p class="comment-content-1">
+        <% if review.user == current_user %>
+          <%= link_to("Delete", product_review_path(@product, review), method: :delete, data: {
+            confirm: "Are you sure?"},class: "btn btn-info btn-xs") %>
+        <% end %>
+      </p>
+  </div>
+</div>

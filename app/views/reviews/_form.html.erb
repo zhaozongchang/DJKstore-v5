@@ -1,0 +1,8 @@
+<div class="comment-area">
+  <%= simple_form_for([@product, @product.reviews.build]) do |f|%>
+    <div class="field">
+      <%= f.input :body, :label => "添加评论", class: "form-control" %>
+      <p class="nnnnnn"><%= f.submit "提交评论", class: "btn btn-danger pull-right" %></p>
+    </div>
+  <% end %>
+</div>

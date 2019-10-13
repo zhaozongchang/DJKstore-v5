@@ -1,3 +1,293 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome-box{
+  width: 1100px;
+  margin: 0 auto;
+}
+/**********商品分类开始**********/
+.product-category{
+  background-color: #343a40;
+  float: left;
+  width: 180px;
+  height: 380px;
+
+}
+
+.product-category .nav-list p{
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  margin-top: 12px;
+}
+// .product-category .nav-list p:hover{
+//   background-color: #ffffff;
+//   opacity:0.1;
+//   color: #ffffff;
+// }
+.product-category .nav-list a{
+  color: #FFFFFF;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  line-height: 35px;
+}
+.product-category .nav-list a:hover{
+  color: #BF9E6B;
+}
+
+.product-category .nav-list span{
+  margin: 0 1px;
+  font-size: 16px;
+  color: #fff;
+}
+/**********商品分类结束**********/
+
+
+/****轮番大图开始****/
+.intro-box{
+  float: right;
+  width: 920px;
+  height: 380px;
+}
+
+.lunfan1 img{
+  height: 380px;
+  width: 940px;
+}
+
+/*****服务优势开始******/
+.service-box .platfor{
+  display: flex;
+  height: 50px;
+  background-color: #fff;
+}
+.service-box .platfor dl{
+  display: flex;
+  margin: 0 auto;
+  line-height: 40px;
+}
+
+.service-box .platfor dt{
+  width: 38px;
+  height: 30px;
+  line-height: 50px;
+}
+
+.service-box .platfor dd{
+  color: #9687A4;
+  line-height: 50px;
+  font-size: 16px;
+}
+/*****服务优势结束******/
+
+
+/*****品牌故事开始******/
+.pinpai{
+  height: 420px;
+  width: 1095px;
+  background-color: #fff;
+  box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.15);
+}
+
+.toubu-title{
+  background-color: #fff;
+  height: 80px;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 80px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.toubu-title h2{
+  font-size: 20px;
+  font-weight:bold;
+  border-bottom: 2px solid #BBB;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.head-image{
+  height: 200px;
+  float: left;
+  margin-left: 200px;
+}
+
+.head-image img{
+  height: 180px;
+  width: 180px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.head-info{
+  float: right;
+  height: 200px;
+  width: 500px;
+  margin-right: 180px;
+  padding-top: 50px;
+}
+
+.head-info2{
+  float: left;
+  height: 200px;
+  width: 500px;
+  margin-left: 200px;
+  padding-top: 50px;
+}
+
+.head-image2{
+  height: 200px;
+  float: right;
+  margin-right: 190px;
+}
+
+.head-image2 img{
+  height: 180px;
+  width: 180px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.head-info h4{
+  font-size: 20px;
+  font-family: "宋体" serif;
+  margin-bottom: 20px;
+}
+
+.head-info,.head-info2 p{
+  // text-indent: 28px;
+  line-height: 25px;
+  font-weight: bold;
+}
+/*****品牌故事结束******/
+
+
+/*****推荐商品开始******/
+.product-list .thumbnail{
+  height: 350px;
+  width: 530px;
+  padding: 0;
+  background-color: #F4F4F4;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.24);
+  border-radius: 2px;
+}
+
+.product-list .thumbnail a{
+  text-decoration: none;
+}
+
+.show-box .thumbnail img{
+  height: 250px;
+  width: 530px;
+  border-radius: 2px;
+}
+
+.caption{
+  height: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.caption .item-price{
+  padding: 5px;
+}
+
+.caption .item-price span:first-child{
+  font-size: 16px;
+  color: #F7A701;
+  font-weight: bolder;
+}
+
+.caption .item-price span:nth-last-child(2){
+  color: #FFFFFF;
+  background: #AB7FD1;
+  border-color: #AB7FD1;
+  padding: 2px;
+  border-radius: 2px;
+  margin-left: 10px;
+
+}
+
+.caption .item-price span:last-child{
+  color: #FB4C81;
+  background: #FFFFFF;
+  border-color: #FB4C81;
+  border: 1px solid #FB4C81;
+  font-size: 10px;
+  padding: 2px;
+  border-radius: 2px;
+  margin-left: 5px;
+}
+
+.item-title{
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 20px;
+  margin-top: 8px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+/*****推荐商品结束******/
+
+
+/**********用户反馈开始**********/
+.carousel-inner .beijing{
+  background-color: #CC99FF;
+  height: 265px;
+}
+.feedback-image img{
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin-left: 260px;
+  margin-top: 65px;
+}
+
+.feedback-info{
+  float: right;
+  margin-right: 110px;
+  margin-top: 80px;
+  // background-color: #fff;
+  margin-bottom: 120px;
+  padding: 10px;
+  color: #fff;
+}
+
+/**********用户反馈结束**********/
+
+
+/**********合作品牌开始**********/
+.brand-image{
+
+}
+
+.brand-image img{
+  height: 150px;
+  width: 271px;
+  padding: 0 0 4px 0;
+  border-radius: 5px;
+}
+/**********合作品牌结束**********/
+
+.goumai{
+  width: 150px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #CC99FF;
+  margin-top: 20px;
+  margin-bottom: -25px;
+  line-height: 40px;
+  border-radius: 10px;
+}
+
+.goumai a{
+  color: #fff;
+  font-size: 18px;
+}
+
+.goumai a:hover{
+  color: #000;
+  font-size: 18px;
+}
