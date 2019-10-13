@@ -14,9 +14,13 @@ Rails.application.routes.draw do
    end
   end
 
+  resources :favorites
+
   resources :products do
     member do
       post :add_to_cart
+      post :favorite
+      post :unfavorite
     end
     collection do
      get :search
@@ -36,7 +40,7 @@ Rails.application.routes.draw do
        post :add_quantity
        post :remove_quantity
      end
-   end 
+   end
 
    resources :orders do
     member do
