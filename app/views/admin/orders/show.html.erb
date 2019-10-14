@@ -1,8 +1,7 @@
 <div class="row">
-   <div class="col-md-12">
+   <div class="col-md-6 col-md-offset-3">
 
     <h2> 订单明细 (<%= render_order_paid_state(@order) %>) </h2>
-
     <%= render "admin/orders/state_option", order: @order %>
 
     <table class="table table-bordered">
@@ -34,7 +33,7 @@
 
     <div class="total clearfix">
       <span class="pull-right">
-       总计 <%= @order.total %> CNY
+       总计 <%= @order.total %>
        </span>
      </div>
 

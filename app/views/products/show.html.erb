@@ -1,10 +1,26 @@
 
 <div class="product-show-box9">
   <div class="product-photos-box">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+    <% if @photos.present? %>
+   <div class="show-picture">
+     <% @photos.each_with_index do |p,index| %>
+       <% if index <1 %>
+        <div class= "tab-pane <%= render_active(index) %>" id="<%= index %>"><%= image_tag (p.avatar.medium.url) %>
+        </div>
+       <% end %>
+     <% end %>
+   </div>
+   <div class="show-photo-xsmall-box">
+     <% @photos.each_with_index do |p,index| %>
+       <% if index <5 %>
+         <div class="small-product">
+           <%= image_tag p.avatar.small.url%>
+         </div>
+       <% end %>
+     <% end %>
+   </div>
     <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+      <%= image_tag("http://placehold.it/400x400&text=No Pic", class:"thumbnail") %>
     <% end %>
   </div>
 
@@ -40,8 +56,24 @@
         <li>闪电退款</li>
       </ul>
       <div class="fenxiang">
-       <span>爆品热度</span>
-       <span><%=  %></span>
+       <span>
+           <% if current_user %>
+            <% if !current_user.is_fan_of?(@product) %>
+              <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
+                <i class="fa fa-heart fa-lg"></i>
+              <% end %>
+            <% else %>
+              <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
+                <i class="fa fa-heart fa-lg"></i>
+              <% end %>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
+              <i class="fa fa-heart fa-lg"></i>
+            <% end %>
+          <% end %>
+          <span> 收藏人气（<%= @product.fans.count %>）</span>
+       </span>
        <span class="share">
          <span>分享:</span>
          <a href="#"><i class="fa fa-twitter"></i></a>
@@ -61,24 +93,7 @@
           已销售一空，无法购买
           <% end %>
       </div>
-      <div class="pull-right">
-        <% if current_user %>
-         <% if !current_user.is_fan_of?(@product) %>
-           <%= link_to favorite_product_path(@product), :class => "like btn btn-default", method: :post do %>
-             <i class="fa fa-heart fa-lg"></i>
-           <% end %>
-         <% else %>
-           <%= link_to unfavorite_product_path(@product), :class => "unlike btn btn-default", method: :post do %>
-             <i class="fa fa-heart fa-lg"></i>
-           <% end %>
-         <% end %>
-       <% else %>
-         <%= link_to favorite_product_path(@product), :class => "like btn btn-default",method: :post do %>
-           <i class="fa fa-heart fa-lg"></i>
-         <% end %>
-       <% end %>
-       <span> 收藏人气（<%= @product.fans.count %>）</span>
-      </div>
+
     </div>
 
     <br>
@@ -102,12 +117,14 @@
            <p class="product-description2 text-center">产品展示</p>
             <!--商品大图展示 -->
             <div class="product-image">
-              <% if @product.image.present? %>
-                <%= image_tag(@product.image.url, class: "thumbnail") %>
-              <% else %>
-                <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
-              <% end %>
-            </div>
+               <% @photos.each_with_index do |p,index| %>
+                 <% if index <5 %>
+                   <div class="small-product">
+                     <%= image_tag p.avatar.url%>
+                   </div>
+                 <% end %>
+               <% end %>
+             </div>
 
              <p class="product-description2 text-center">常见问题</p>
            <div class="faq">

@@ -9,7 +9,8 @@
   <%= f.input :price ,:label => "产品价格", :required => true%>
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "商品类别", :required => true)%> <br><br>
   <div class="group">
-   <%= f.input :image, as: :file %>
+    <%= f.label :avatar,:label => "产品图片" %>
+    <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %><br>
   </div>
   <%= f.submit "Submit", data: {disable_with: "Submitting..."}%>
   <% end %>

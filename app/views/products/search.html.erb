@@ -6,7 +6,7 @@
     </div>
     <% elsif @products.blank? %>
     <br>
-    <h2 class="search-info-title"> 请输入关键字...</h2>
+    <h2 class="search-info-title"> 输入关键字，例如：苹果</h2>
   <% else %>
     <h2 class="search-info-title">有关"<%= @query_string %>"的信息</h2>
     <div class="search_result">
@@ -21,6 +21,6 @@
         <% end %>
       </div>
     </div>
-    
+
   <% end %>
 </div>

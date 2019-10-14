@@ -38,31 +38,38 @@
                 <% end %>
               </li>
               <% if !current_user %>
-              <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#signup-modal"><i class="fa fa-user-circle-o" aria-hidden="true"></i> 注册</a></li>
+              <li>
+                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in" aria-hidden="true"></i> 登入</a>
+              </li>
                 <% else %>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Hi!, <%= current_user.email %>
+                      <i class="fa fa-user-circle" aria-hidden="true"> <%= current_user.email %></i>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                       <% if current_user.admin? %>
                       <li>
-                        <%= link_to("管理商品", admin_products_path ) %>
+                        <%= link_to(" 管理商品", admin_products_path ,class: "fa fa-cogs" ) %>
                       </li>
-                      <li> <%= link_to("管理订单", admin_orders_path) %> </li>
+                      <li class="divider"></li>
+                      <li> <%= link_to(" 管理订单", admin_orders_path, class: "fa fa-credit-card-alt" )%> </li>
                       <% end %>
+                      <li class="divider"></li>
                       <li>
-                       <%= link_to("用户中心", edit_account_user_path(current_user)) %>
+                       <%= link_to(" 用户中心", edit_account_user_path(current_user),class:"fa fa-user") %>
                      </li>
+                     <li class="divider"></li>
                       <li>
-                        <%= link_to("个人订单",account_orders_path )%>
+                        <%= link_to(" 个人订单",account_orders_path,class:"fa fa-id-card")%>
                       </li>
+                      <li class="divider"></li>
                       <li>
-                        <%= link_to("我的收藏", favorites_path ) %>
+                        <%= link_to(" 我的收藏", favorites_path, class: "fa fa-heart" ) %>
                       </li>
-                        <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
+                      <li class="divider"></li>
+                        <li> <%= link_to(content_tag(:i, ' 登  出 ', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>
                 <% end %>
@@ -77,15 +84,15 @@
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog" role="document">
     <div class="loginmodal-container">
-       <h2>Log in</h2>
+       <h2 class="text-center">欢迎登入</h2>
        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
          <div class="form-inputs">
-           <%= f.input :email, required: false, autofocus: true %>
-           <%= f.input :password, required: false %>
-           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+           <%= f.input :email,label:"邮箱", required: false, autofocus: true %>
+           <%= f.input :password,label:"密码", required: false %>
+           <%= f.input :remember_me,label:"记住密码", as: :boolean if devise_mapping.rememberable? %>
          </div>
          <div class="form-actions">
-           <%= f.button :submit, "Log in" %>
+           <%= f.button :submit, "登 入" %>
          </div>
        <% end %>
     </div>
@@ -95,16 +102,16 @@
 <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
-      <h2>Sign up</h2>
+      <h2 class="text-center">注册</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
+          <%= f.input :email,label:"邮箱", required: true, autofocus: true %>
+          <%= f.input :password,label:"密码", required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+          <%= f.input :password_confirmation,label:"确认密码", required: true %>
         </div>
         <div class="form-actions">
-            <%= f.button :submit, "Sign up" %>
+            <%= f.button :submit, "注 册" %>
         </div>
       <% end %>
     </div>

@@ -1,6 +1,4 @@
 class Admin::ProductsController < ApplicationController
-  layout "admin"
-
   before_action :authenticate_user!
   before_action :admin_required
 
@@ -11,6 +9,7 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @categories = Category.all.map { |c| [c.name, c.id]}
+    @photo = @product.photos.build
   end
 
   def create
@@ -18,6 +17,11 @@ class Admin::ProductsController < ApplicationController
     @product.category_id = params[:category_id]
 
     if @product.save
+      if params[:photos] != nil
+        params[:photos]['avatar'].each do |a|
+          @photo = @product.photos.create(:avatar => a)
+        end
+      end
       redirect_to admin_products_path
     else
       render :new
@@ -39,6 +43,12 @@ class Admin::ProductsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to admin_products_path
+  end 
 
 
   private

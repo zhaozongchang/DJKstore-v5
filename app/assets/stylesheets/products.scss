@@ -2,6 +2,82 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**********前台商品页面 index开始**********/
+  .product-box{
+    width: 1100px;
+    // border: 2px solid red;
+    height: 800px;
+    margin: 0 auto;
+  }
+
+  .product-box2{
+    // border: 2px solid blue;
+    width: 920px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  .product-box3{
+    // border: 1px solid black;
+    width: 205px;
+    height: 300px;
+    margin-bottom: 20px;
+
+    // text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow:0px 0px 4px 0 rgba(0,0,0,0.15);
+  }
+
+  .product-info{
+    margin: 15px 0 0 10px;
+  }
+  .product-info .supplier{
+    font-size: 13px;
+    line-height: 17px;
+    color: #BF9E6B;
+    margin-top: 5px;
+  }
+
+  .product-info .title{
+    font-size: 14px;
+    line-height: 8px;
+    color: #000;
+    margin-top: 0px;
+  }
+
+  .product-info .priceBox{
+    font-size: 14px;
+    line-height: 25px;
+    height: 25px;
+    color: #4A4A4A;
+    margin-top: 10px;
+  }
+  .product-info .priceBox span:first-child{
+    color: #F7A701;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  .product-info .priceBox span:nth-child(2){
+    color: #FFFFFF;
+    background: #AB7FD1;
+    border-color: #AB7FD1;
+    padding: 2px;
+    border-radius: 2px;
+  }
+
+  .product-info .priceBox span:nth-child(3){
+    color: #FB4C81;
+    background: #FFFFFF;
+    border-color: #FB4C81;
+    border: 1px solid #FB4C81;
+    font-size: 10px;
+    padding: 2px;
+    border-radius: 2px;
+    margin-left: 5px;
+  }
+
+  /**********前台商品页面 index结束**********/
 
 /**********前台商品页面 show开始**********/
 .product-show-box9{
@@ -99,23 +175,11 @@
   border-radius: 2px;
 }
 .fenxiang{
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-.fenxiang span:nth-child(2){
-  display: inline-block;
-  margin-right: 5px;
-  border: 1px solid #FB4C81;
-  font-size: 13px;
-  color: #f85453;
-  border-radius: 2px;
-  height: 18px;
-  width: 30px;
-  line-height: 18px;
-  text-align: center;
-}
 .fenxiang .share {
-  margin-left: 160px;
+  margin-left: 100px;
 }
 .fenxiang .share a{
   padding: 0 2px;
@@ -184,13 +248,13 @@
   box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.15);
 }
 .tab-content .product-image{
-
-}
-.tab-content .product-image img{
-  width: 600px;
-  height: 600px;
+  width: 700px;
   margin: 0 auto;
-  margin-bottom: 35px;
+}
+.tab-content .small-product img{
+  width: 700px;
+  height: 700px;
+
   box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.15);
 }
 
@@ -246,3 +310,18 @@
 }
 
 /**********前台商品页面 show结束**********/
+
+/**********前台商品页面 category开始**********/
+.category-title{
+  height: 60px;
+  width: 895px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 1px 2px 4px 0 rgba(0,0,0,0.10);
+  border-radius: 5px;
+
+}
+.text-center{
+  line-height: 60px;
+}
+/**********前台商品页面 category结束**********/
