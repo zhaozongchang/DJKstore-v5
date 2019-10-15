@@ -47,6 +47,7 @@ gem 'aasm'
 gem 'ransack'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
+gem 'figaro'
 
 
 group :development, :test do
