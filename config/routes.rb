@@ -29,8 +29,8 @@ Rails.application.routes.draw do
      get :men
      get :women
      get :beautiful
-     get :books
-     get :computer
+     get :glasses
+     get :luggage
      get :furniture
    end
    resources :reviews

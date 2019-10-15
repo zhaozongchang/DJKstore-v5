@@ -48,11 +48,11 @@ class ProductsController < ApplicationController
      @products = Product.where(:category_id => 5)
    end
 
-   def books
+   def glasses
      @products = Product.where(:category_id => 6)
    end
 
-   def computer
+   def luggage
      @products = Product.where(:category_id => 7)
    end
 
