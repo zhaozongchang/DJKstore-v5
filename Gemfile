@@ -48,6 +48,7 @@ gem 'ransack'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
+gem 'mini_racer'
 
 
 group :development, :test do
