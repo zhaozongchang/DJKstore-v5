@@ -48,7 +48,7 @@ gem 'ransack'
 gem 'carrierwave-qiniu'
 gem 'qiniu-rs'
 gem 'figaro'
-gem 'mini_racer'
+
 
 
 group :development, :test do
@@ -79,4 +79,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
   gem 'pg'
+  gem 'mini_racer'
 end
